@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Galaxy_Wars.Vehicle
+namespace Galaxy_Wars
 {
     class Destroyer : Vehicle
     {

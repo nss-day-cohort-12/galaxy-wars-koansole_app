@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars
 {
-    class Icarus : Vehicle
+    class Banshee : Vehicle
     {
-        public bool WarpSpeed { get; set; }
+        public bool StealthDrive { get; set; }
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars
 {
-    class Destroyer : Vehicle
+    class Overseer : Vehicle
     {
-        public int EscapePods { get; set; }
+        public bool SpawnChangling { get; set; }
     }
 }

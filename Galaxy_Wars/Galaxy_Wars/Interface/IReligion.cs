@@ -10,6 +10,7 @@ namespace Galaxy_Wars.Interface
     {
         bool radical { get; set; }
         int zenUnified { get; set; }
-        string vehicleType { get; set; }
+        string vehicleClassAllowed { get; set; }
+        int populationBonus { get; set; }
     }
 }

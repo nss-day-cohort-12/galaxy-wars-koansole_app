@@ -10,5 +10,7 @@ namespace Galaxy_Wars.Interface
     {
         string weapons { get; set; }
         int intimidation { get; set; }
+        string vehicleClassAllowed { get; set; }
+        int populationBonus { get; set; }
     }
 }

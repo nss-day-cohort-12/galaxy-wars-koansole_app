@@ -10,6 +10,7 @@ namespace Galaxy_Wars.Interface
     {
         bool breathsInSpace { get; set; }
         double medicineEfficiency { get; set; }
-        string vehicleType { get; set; }
+        string vehicleClassAllowed { get; set; }
+        int populationBonus { get; set; }
     }
 }

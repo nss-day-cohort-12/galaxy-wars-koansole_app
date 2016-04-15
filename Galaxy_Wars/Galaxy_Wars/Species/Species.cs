@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Galaxy_Wars.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,10 @@ namespace Galaxy_Wars.Species
         public int lifeSpan { get; set; }
         public int population { get; set; }
         public int heatResistance { get; set; }
-
+        // All Species initialize with these constants
+        public void init ()
+        {
+            population = 1000000;
+        }
     }
 }

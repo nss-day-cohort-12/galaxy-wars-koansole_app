@@ -43,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fight_Logic\Fight_Logic.cs" />
+    <Compile Include="Interface\IReligion.cs" />
+    <Compile Include="Interface\IScience.cs" />
+    <Compile Include="Interface\IWar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Species\Species.cs" />
+    <Compile Include="Vehicle\Destroyer.cs" />
+    <Compile Include="Vehicle\ExcavationShip.cs" />
+    <Compile Include="Vehicle\HeavensGate.cs" />
+    <Compile Include="Vehicle\Icarus.cs" />
+    <Compile Include="Vehicle\Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

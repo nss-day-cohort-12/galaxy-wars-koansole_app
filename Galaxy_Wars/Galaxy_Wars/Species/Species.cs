@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Galaxy_Wars.Species
+namespace Galaxy_Wars
 {
     class Species
     {

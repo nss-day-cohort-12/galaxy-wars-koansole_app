@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars
 {
-    class HeavensGate : Vehicle
+    class VoidRay : Vehicle
     {
-        public bool StealthDrive { get; set; }
+        public bool WarpSpeed { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace Galaxy_Wars.Interface
     interface IScience
     {
         bool breathsInSpace { get; set; }
-        double medicineEfficiency { get; set; }
+        bool humanCloning { get; set; }
         string vehicleClassAllowed { get; set; }
         int populationBonus { get; set; }
     }

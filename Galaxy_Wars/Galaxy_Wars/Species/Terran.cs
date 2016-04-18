@@ -5,74 +5,39 @@ using System.Text;
 using System.Threading.Tasks;
 using Galaxy_Wars.Interface;
 
-namespace Galaxy_Wars.Species
+namespace Galaxy_Wars
 {
 
     class Terran : Species, IScience
     {
-        public bool breathsInSpace
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public bool breathsInSpace { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public int populationBonus { get; set; }
 
-        public double medicineEfficiency
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public string vehicleClassAllowed { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
-        public int populationBonus
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string vehicleClassAllowed
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public bool humanCloning { get; set; }
 
         public Terran()
         {
             init();
             // IScience Properties Initialize
-            medicineEfficiency = 100;
+            breathsInSpace = true;
+            humanCloning = true;
             populationBonus = 0;
             vehicleClassAllowed = "Destroyer";
+
 
             // Species Properties Initialize
             numberOfLegs = 2;
             lifeSpan = 80;
+            speciesName = "Terran";
+        }
+        public override void fight (Species defender)
+        {
+            defender.population -= 20000;
+            Console.WriteLine("Terran attacks. New {0} population: {1}", defender.speciesName, defender.population);
         }
     }
 }

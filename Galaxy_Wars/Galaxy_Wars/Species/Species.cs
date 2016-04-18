@@ -21,6 +21,11 @@ namespace Galaxy_Wars
         public int lifeSpan { get; set; }
         public int population { get; set; }
         public int heatResistance { get; set; }
+        public void anomaly ()
+        {
+            int convertedPop = Convert.ToInt32(population * 0.01);
+            population -= convertedPop;
+        }
         // All Species initialize with these constants
         public void init ()
         {

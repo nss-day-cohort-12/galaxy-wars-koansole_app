@@ -34,10 +34,11 @@ namespace Galaxy_Wars
         }
         public override void fight(Species defender)
         {
+            base.fight(defender);
             // determine conversion amount before attack
-            int convertedPop = Convert.ToInt32(defender.population * 0.02);
+            int convertedPop = Convert.ToInt32(defender.population * 0.01);
             Console.WriteLine("Converted Population: {0}", convertedPop);
-            defender.population -= 20000 + convertedPop;
+            defender.population -= convertedPop;
             Console.WriteLine("Protoss attacks. New {0} population: {1}", defender.speciesName, defender.population);
             // Should implement a conversion function on base species class (either for attack or defense)
             population += convertedPop;

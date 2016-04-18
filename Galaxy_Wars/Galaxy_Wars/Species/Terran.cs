@@ -36,7 +36,8 @@ namespace Galaxy_Wars
         }
         public override void fight (Species defender)
         {
-            defender.population -= 20000;
+            base.fight(defender);
+            defender.population -= 5000;
             Console.WriteLine("Terran attacks. New {0} population: {1}", defender.speciesName, defender.population);
         }
     }

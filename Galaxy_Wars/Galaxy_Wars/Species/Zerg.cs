@@ -5,61 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Galaxy_Wars.Interface;
 
-namespace Galaxy_Wars.Species
+namespace Galaxy_Wars
 {
     class Zerg : Species, IWar
     {
-        public int intimidation
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public int intimidation { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public int populationBonus { get; set; }
 
-        public int populationBonus
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public string vehicleClassAllowed { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string vehicleClassAllowed
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string weapons
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string weapons { get; set; }
 
         public Zerg()
         {
@@ -74,6 +30,15 @@ namespace Galaxy_Wars.Species
             // Species Properties Initialize
             numberOfLegs = 4;
             lifeSpan = 50;
+            speciesName = "Zerg";
+
+        }
+        public override void fight(Species defender)
+        {
+            defender.population -= 30000;
+            Console.WriteLine("Zerg attacks. New {0} population: {1}", defender.speciesName, defender.population);
+            population -= 2500;
+            Console.WriteLine("Zerg loses 2,500 due to overaggression. Current population: {0}", population);
         }
     }
 }

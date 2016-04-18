@@ -5,62 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Galaxy_Wars.Interface;
 
-namespace Galaxy_Wars.Species
+namespace Galaxy_Wars
 {
     class Protoss : Species, IReligion
     {
+        public int populationBonus { get; set; }
 
-        public int populationBonus
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public bool radical { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string vehicleClassAllowed { get; set; }
 
-        public bool radical
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public int zenUnified { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string vehicleClassAllowed
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int zenUnified
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
         public Protoss()
         {
@@ -76,7 +32,17 @@ namespace Galaxy_Wars.Species
             numberOfLegs = 2;
             lifeSpan = 100;
         }
-
+        public override void fight(Species defender)
+        {
+            // determine conversion amount before attack
+            int convertedPop = Convert.ToInt32(defender.population * 0.02);
+            Console.WriteLine("Converted Population: {0}", convertedPop);
+            defender.population -= 20000 + convertedPop;
+            Console.WriteLine("Protoss attacks. New {0} population: {1}", defender.speciesName, defender.population);
+            // Should implement a conversion function on base species class (either for attack or defense)
+            population += convertedPop;
+            Console.WriteLine("Protoss population after conversion: {0}", population);
+        }
     }
 
 }

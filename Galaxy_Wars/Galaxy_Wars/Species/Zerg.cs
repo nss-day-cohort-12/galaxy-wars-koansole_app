@@ -31,11 +31,18 @@ namespace Galaxy_Wars
             numberOfLegs = 4;
             lifeSpan = 50;
             speciesName = "Zerg";
+            conversionModifier = 0.01;
+            strength = 30000;
+            vsReligionBonus = false;
+            vsScienceBonus = true;
+            vsWarBonus = false;
+
+
 
         }
-        public override void fight(Species defender)
+        public override void fight (Species defender)
         {
-            defender.population -= 30000;
+            // base.fight(defender);
             Console.WriteLine("Zerg attacks. New {0} population: {1}", defender.speciesName, defender.population);
             population -= 2500;
             Console.WriteLine("Zerg loses 2,500 due to overaggression. Current population: {0}", population);

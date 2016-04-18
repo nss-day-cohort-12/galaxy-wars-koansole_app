@@ -26,21 +26,33 @@ namespace Galaxy_Wars
             radical = true;
             vehicleClassAllowed = "HeavensGate";
             zenUnified = 0;
-
-
+            
             // Species Properties Initialize
             numberOfLegs = 2;
             lifeSpan = 100;
+            conversionModifier = 0.00;
+            strength = 20000;
+            vsReligionBonus = false;
+            vsScienceBonus = false;
+            vsWarBonus = true;
+
+
         }
-        public override void fight(Species defender)
+
+        public void conversion(Species defender)
+        {
+            int convertedPop = Convert.ToInt32(defender.population * (0.02 - defender.conversionModifier));
+            defender.population -= convertedPop;
+            population += convertedPop;
+            Console.WriteLine("Converted {0} Population: {1}", defender.speciesName, convertedPop);
+        }
+
+        public override void fight (Species defender)
         {
             // determine conversion amount before attack
-            int convertedPop = Convert.ToInt32(defender.population * 0.02);
-            Console.WriteLine("Converted Population: {0}", convertedPop);
-            defender.population -= 20000 + convertedPop;
-            Console.WriteLine("Protoss attacks. New {0} population: {1}", defender.speciesName, defender.population);
+            base.fight(defender);
+            conversion(defender);
             // Should implement a conversion function on base species class (either for attack or defense)
-            population += convertedPop;
             Console.WriteLine("Protoss population after conversion: {0}", population);
         }
     }

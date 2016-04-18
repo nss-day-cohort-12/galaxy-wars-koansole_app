@@ -9,7 +9,11 @@ namespace Galaxy_Wars
 {
     class Species
     {
+        public bool vsReligionBonus { get; set; }
+        public bool vsScienceBonus { get; set; }
+        public bool vsWarBonus { get; set; }
         public string speciesName { get; set; }
+        public string speciesType { get; set; }
         public int numberOfLegs { get; set; }
         public int speed { get; set; }
         public int strength { get; set; }
@@ -21,6 +25,8 @@ namespace Galaxy_Wars
         public int lifeSpan { get; set; }
         public int population { get; set; }
         public int heatResistance { get; set; }
+        public double conversionModifier { get; set; }
+
         // All Species initialize with these constants
         public void init ()
         {
@@ -28,9 +34,20 @@ namespace Galaxy_Wars
             Console.WriteLine("Species Created");
         }
 
-        public virtual void fight (Species defender)
+        public bool bonusAttack (Species defender) // boolean return
         {
-            Console.WriteLine("Defender: {0}", defender.speciesName);
+            return ((vsWarBonus && defender.speciesType == "Warfare") || (vsScienceBonus && defender.speciesType == "Science") || (vsReligionBonus && defender.speciesType == "Religion"));    
         }
+
+
+        public virtual void fight (Species defender)
+        {   
+            // determine bonus attack value (if any)
+            double bonusValue = bonusAttack(defender) ? 1.02 : 0;
+            int attackValue = Convert.ToInt32(strength * bonusValue);
+            defender.population -= attackValue;
+            Console.WriteLine("{0} attacks {1} and kills {2}", speciesName, defender.speciesName, attackValue);
+        }
+
     }
 }

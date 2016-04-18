@@ -28,16 +28,29 @@ namespace Galaxy_Wars
             populationBonus = 0;
             vehicleClassAllowed = "Destroyer";
 
-
             // Species Properties Initialize
             numberOfLegs = 2;
             lifeSpan = 80;
             speciesName = "Terran";
+            conversionModifier = 0.00;
+            strength = 20000;
+            vsReligionBonus = true;
+            vsScienceBonus = false;
+            vsWarBonus = false;
+
+
         }
+        public void clone ()
+        {
+            population += 2000;
+            Console.WriteLine("Terran population increased by 2000 due to cloning advances");
+        }
+
         public override void fight (Species defender)
         {
-            defender.population -= 20000;
-            Console.WriteLine("Terran attacks. New {0} population: {1}", defender.speciesName, defender.population);
+            // human cloning method call
+            clone();
+            base.fight(defender);
         }
     }
 }

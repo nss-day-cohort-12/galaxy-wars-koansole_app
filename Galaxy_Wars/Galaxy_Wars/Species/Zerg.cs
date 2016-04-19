@@ -24,7 +24,7 @@ namespace Galaxy_Wars
             // IWar Properties Initialize
             intimidation = 100;
             populationBonus = 200;
-            vehicleClassAllowed = "Icarus";
+            vehicleClassAllowed = "Overseer";
             weapons = "claws";
 
             // Species Properties Initialize
@@ -36,13 +36,17 @@ namespace Galaxy_Wars
             vsReligionBonus = false;
             vsScienceBonus = true;
             vsWarBonus = false;
-
-
-
         }
+
+        public static void Vehicle ()
+        {
+            Overseer overseer1 = new Overseer();
+        }
+
         public override void fight (Species defender)
         {
-            // base.fight(defender);
+            //strenght += overseer1.weaponPower;
+            base.fight(defender);
             Console.WriteLine("Zerg attacks. New {0} population: {1}", defender.speciesName, defender.population);
             population -= 2500;
             Console.WriteLine("Zerg loses 2,500 due to overaggression. Current population: {0}", population);

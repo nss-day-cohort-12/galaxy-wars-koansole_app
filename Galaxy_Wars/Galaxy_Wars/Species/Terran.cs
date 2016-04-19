@@ -32,8 +32,8 @@ namespace Galaxy_Wars
             numberOfLegs = 2;
             lifeSpan = 80;
             speciesName = "Terran";
-            conversionModifier = 0.00;
-            strength = 20000;
+            conversionModifier = 0.02;
+            strength = 10000;
             vsReligionBonus = true;
             vsScienceBonus = false;
             vsWarBonus = false;
@@ -42,8 +42,8 @@ namespace Galaxy_Wars
         }
         public void clone ()
         {
-            population += 2000;
-            Console.WriteLine("Terran population increased by 2000 due to cloning advances");
+            population += 10000;
+            Console.WriteLine("Terran population increased by 10000 due to cloning advances. Current population = {0}", population);
         }
 
         public override void fight (Species defender)

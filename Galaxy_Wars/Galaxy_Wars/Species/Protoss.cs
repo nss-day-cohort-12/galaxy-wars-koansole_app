@@ -32,7 +32,7 @@ namespace Galaxy_Wars
             speciesName = "Protoss";
             lifeSpan = 100;
             conversionModifier = 0.00;
-            strength = 20000;
+            strength = 10000;
             vsReligionBonus = false;
             vsScienceBonus = false;
             vsWarBonus = true;

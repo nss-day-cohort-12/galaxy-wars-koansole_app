@@ -50,7 +50,7 @@ namespace Galaxy_Wars
         }
         public void loserMethod()
         {
-            int convertedPop = Convert.ToInt32(population * 0.02);
+            int convertedPop = Convert.ToInt32(population * 0.01);
             population -= convertedPop;
         }
         public bool checkForLoser()

@@ -31,8 +31,8 @@ namespace Galaxy_Wars
             numberOfLegs = 4;
             lifeSpan = 50;
             speciesName = "Zerg";
-            conversionModifier = 0.01;
-            strength = 30000;
+            conversionModifier = 0.005;
+            strength = 20000;
             vsReligionBonus = false;
             vsScienceBonus = true;
             vsWarBonus = false;
@@ -50,6 +50,8 @@ namespace Galaxy_Wars
             Console.WriteLine("Zerg attacks. New {0} population: {1}", defender.speciesName, defender.population);
             population -= 2500;
             Console.WriteLine("Zerg loses 2,500 due to overaggression. Current population: {0}", population);
+            population += 600;
+            Console.WriteLine("Zerg Gain 600 population from breeding Current population: {0}", population);
         }
     }
 }

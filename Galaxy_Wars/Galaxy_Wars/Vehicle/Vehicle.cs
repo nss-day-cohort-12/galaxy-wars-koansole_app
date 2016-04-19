@@ -11,9 +11,17 @@ namespace Galaxy_Wars
         public int speed { get; set; }
         public string weapons { get; set; }
         public bool FTL { get; set; }
-        public string armor { get; set; }
+        public int armor { get; set; }
         public string species { get; set; }
         public int weaponPower { get; set; }
         public string VehicleClass { get; set; }
+        public virtual void weaponAttack()
+        {
+            weaponPower = 1000;
+        }
+        public virtual void vehicleArmor()
+        {
+            armor = 1000;
+        }
     }
 }

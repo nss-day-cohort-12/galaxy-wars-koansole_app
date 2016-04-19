@@ -9,5 +9,10 @@ namespace Galaxy_Wars
     class VoidRay : Vehicle
     {
         public bool WarpSpeed { get; set; }
+
+        public override void weaponAttack()
+        {
+            weaponPower = 3000;
+        }
     }
 }

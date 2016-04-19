@@ -9,5 +9,10 @@ namespace Galaxy_Wars
     class Overseer : Vehicle
     {
         public bool SpawnChangling { get; set; }
+
+        public override void weaponAttack()
+        {
+            weaponPower = 30000;
+        }
     }
 }

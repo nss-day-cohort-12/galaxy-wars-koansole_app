@@ -47,6 +47,24 @@ namespace Galaxy_Wars
             int attackValue = Convert.ToInt32(strength * bonusValue);
             defender.population -= attackValue;
             Console.WriteLine("{0} attacks {1} and kills {2}", speciesName, defender.speciesName, attackValue);
+            defender.population -= strength;
+        }
+        public void loserMethod()
+        {
+            int convertedPop = Convert.ToInt32(population * 0.02);
+            population -= convertedPop;
+        }
+        public bool checkForLoser()
+        {
+            if (population <= 0)
+            {
+                Console.WriteLine("{0} has been vanquished", speciesName);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

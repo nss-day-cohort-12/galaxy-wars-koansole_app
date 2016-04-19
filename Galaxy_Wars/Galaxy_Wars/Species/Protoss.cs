@@ -29,6 +29,7 @@ namespace Galaxy_Wars
             
             // Species Properties Initialize
             numberOfLegs = 2;
+            speciesName = "Protoss";
             lifeSpan = 100;
             conversionModifier = 0.00;
             strength = 20000;

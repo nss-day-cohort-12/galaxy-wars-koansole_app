@@ -45,8 +45,7 @@ namespace Galaxy_Wars
             // determine bonus attack value (if any)
             double bonusValue = bonusAttack(defender) ? 1.02 : 0;
             int attackValue = Convert.ToInt32(strength * bonusValue);
-            defender.population -= attackValue;
-            Console.WriteLine("{0} attacks {1} and kills {2}", speciesName, defender.speciesName, attackValue);
+            Console.WriteLine("{0} attacks {1} and kills {2}", speciesName, defender.speciesName, strength);
             defender.population -= strength;
         }
         public void loserMethod()

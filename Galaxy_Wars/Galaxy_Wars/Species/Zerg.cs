@@ -45,7 +45,7 @@ namespace Galaxy_Wars
 
         public override void fight (Species defender)
         {
-            strenght += overseer1.weaponPower;? how to we access that
+            //strenght += overseer1.weaponPower;
             base.fight(defender);
             Console.WriteLine("Zerg attacks. New {0} population: {1}", defender.speciesName, defender.population);
             population -= 2500;

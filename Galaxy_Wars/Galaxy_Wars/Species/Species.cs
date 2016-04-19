@@ -21,9 +21,9 @@ namespace Galaxy_Wars
         public int lifeSpan { get; set; }
         public int population { get; set; }
         public int heatResistance { get; set; }
-        public void anomaly ()
+        public void loserMethod ()
         {
-            int convertedPop = Convert.ToInt32(population * 0.01);
+            int convertedPop = Convert.ToInt32(population * 0.02);
             population -= convertedPop;
         }
         // All Species initialize with these constants
@@ -35,7 +35,19 @@ namespace Galaxy_Wars
 
         public virtual void fight (Species defender)
         {
+            defender.population -= 20000;
             Console.WriteLine("Defender: {0}", defender.speciesName);
+        }
+        public bool checkForLoser()
+        {
+            if (population <= 0)
+            {
+                Console.WriteLine("{0} has been vanquished", speciesName);
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }

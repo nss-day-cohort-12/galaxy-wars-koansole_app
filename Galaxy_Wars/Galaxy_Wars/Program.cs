@@ -12,9 +12,6 @@ namespace Galaxy_Wars
         static void Main(string[] args)
         {
             Console.WriteLine("Galaxy Wars Testing");
-            //string test1 = Console.ReadLine();
-            //Console.WriteLine("You entered the number {0}", test1);
-            // End prompt for screen display
 
             Terran terran1 = new Terran();
             Zerg zerg1 = new Zerg();
@@ -25,13 +22,11 @@ namespace Galaxy_Wars
             //Console.WriteLine("Test terran humanCloning: {0}", terran1.humanCloning);
             //Console.WriteLine("Test Zerg: {0}", zerg1.intimidation);
 
-
-
-            // test loop through 25 years
             int counter = 1;
             bool gameOver = false;
             int anomaly = 0;
-            while (!gameOver && counter <= 50) // test final count of 50 for now
+
+            while (!gameOver) // test final count of 50 for now
             {
                 Console.WriteLine("Year: {0}", counter);
                 // check for year 25
@@ -56,61 +51,65 @@ namespace Galaxy_Wars
                         anomaly = 3;
                     };
                 }
+
                 // year counter
                 counter++;
             
                 // Science and Religion
-                    // Science gains 5,000
-                    terran1.fight(protoss1);
-                    // Religion converts 1% of the opponent's current population to their side
-                    protoss1.fight(terran1);
-                    if (anomaly == 1)
-                    {
-                        // Science looses an additional 2%
-                    } else {
-                        // Religion looses an additional 2%
-                    }
+                // Science gains 5,000
+                terran1.fight(protoss1);
+                // Religion converts 1% of the opponent's current population to their side
+                protoss1.fight(terran1);
+                if (anomaly == 1)
+                {
+                    // Science looses an additional 2%
+                    terran1.loserMethod();
+                } else {
+                    // Religion looses an additional 2%
+                    protoss1.loserMethod();
+                }
+                if (terran1.checkForLoser() == true || protoss1.checkForLoser() == true)
+                {
+                    break;
+                }
 
                 // War and Science
-                    // War kills 10,000 from opponent
-                    zerg1.fight(terran1);
-                    // Science gains 5,000
-                    terran1.fight(zerg1);
-                    if (anomaly == 2)
-                    {
-                        // War looses an additional 2%
-                    } else {
-                        // Science looses an additional 2%
-                    }
+                // War kills 10,000 from opponent
+                zerg1.fight(terran1);
+                // Science gains 5,000
+                terran1.fight(zerg1);
+                if (anomaly == 2)
+                {
+                    // War looses an additional 2%
+                    zerg1.loserMethod();
+                } else {
+                    // Science looses an additional 2%
+                    terran1.loserMethod();
+                }
+                if (terran1.checkForLoser() == true || zerg1.checkForLoser() == true)
+                {
+                    break;
+                }
 
                 // Religion and War
-                    // Religion converts 1% of the opponent's current population to their side
-                    protoss1.fight(terran1);
-                    // War kills 10,000 from opponent
-                    zerg1.fight(protoss1);
-                    if (anomaly == 1)
-                    {
-                        // Religion looses an additional 2%
-                    } else {
-                        // War looses an additional 2%
-                    }
-                
-                // Check for a loser
-                if (terran1.population <= 0) {
-                    Console.WriteLine("Terran has lost");
-                    gameOver = true;
-                }
-                if (protoss1.population <= 0)
+                // Religion converts 1% of the opponent's current population to their side
+                protoss1.fight(zerg1);
+                // War kills 10,000 from opponent
+                zerg1.fight(protoss1);
+                if (anomaly == 1)
                 {
-                    Console.WriteLine("Protoss has lost");
-                    gameOver = true;
+                    // Religion looses an additional 2%
+                    protoss1.loserMethod();
+                } else {
+                    // War looses an additional 2%
+                    zerg1.loserMethod();
                 }
-                if (zerg1.population <= 0)
+                if (protoss1.checkForLoser() == true || zerg1.checkForLoser() == true)
                 {
-                    Console.WriteLine("Zerg has lost");
-                    gameOver = true;
+                    break;
                 }
 
+                anomaly = 0;
             }
 
             Console.WriteLine("Program End");
